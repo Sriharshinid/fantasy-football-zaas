@@ -19,7 +19,6 @@ const leftAlign = {
 function App() {
   // const [events, setEvents] = useState([] as string[]);
   // const [gameData, setGameData] = useState([] as any[]);
-  const [fantasyPlayerScores, setFantasyPlayerScores] = useState([] as any[]);
   const [loading, setLoading] = useState(true);
   const [columnDefs, setColumnDefs] = useState([] as (ColDef | ColGroupDef)[]);
   const [rowDefs, setRowDefs] = useState([] as any[]);
@@ -105,7 +104,6 @@ function App() {
 
       const scores = populateFantasyPlayerScores(getPlayerScores(allPlayerData, playerIdToNamesPromise), getDefensiveScores(allTeamData));
 
-      setFantasyPlayerScores(scores);
       setColumnDefs(getColumnDefs(scores));
       setRowDefs(getRowData(scores));
       setLoading(false);
