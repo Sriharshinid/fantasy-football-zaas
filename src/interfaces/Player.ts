@@ -19,12 +19,3 @@ export default class Player {
         public numberOfFGOver50Yds: number = 0,
     ) { }
 }
-
-export enum PlayerType {
-    QB = 'QB',
-    RB = 'RB',
-    WR = 'WR',
-    TE = 'TE',
-    K = 'K',
-    FLX = 'FLX'
-}
