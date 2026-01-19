@@ -7,6 +7,7 @@ import { ClientSideRowModelModule, ModuleRegistry, type ColDef, type ColGroupDef
 import type FantasyPlayer from './interfaces/FantasyPlayer';
 import { Position } from './interfaces/FantasyPlayer';
 import { themeQuartz } from 'ag-grid-community';
+import ScoringRules from './ScoringRules';
 
 ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
@@ -24,11 +25,11 @@ function App() {
   const [rowDefs, setRowDefs] = useState([] as any[]);
 
   const getRowClass = (params: any) => {
-  if (params.data?.position === 'Total') {
-    return 'total-row';
-  }
-  return '';
-};
+    if (params.data?.position === 'Total') {
+      return 'total-row';
+    }
+    return '';
+  };
 
   const getColumnDefs = (players: FantasyPlayer[]): (ColDef | ColGroupDef)[] => {
 
@@ -43,7 +44,7 @@ function App() {
       const playerName = player.fantasyPlayerName.replaceAll(' ', '');
       columns.push({
         headerName: player.fantasyPlayerName,
-        children: [{ field: `${playerName}-name`, headerName: '', cellStyle: leftAlign, }, { field: `${playerName}-score`, headerName: '', cellStyle: leftAlign, maxWidth: 70}],
+        children: [{ field: `${playerName}-name`, headerName: '', cellStyle: leftAlign, }, { field: `${playerName}-score`, headerName: '', cellStyle: leftAlign, maxWidth: 70 }],
       })
     });
 
@@ -179,6 +180,10 @@ function App() {
 
   return (
     <div>
+      <header className="page-header">
+        <h1>🏈 Playoff Fantasy Football 2026 🏈</h1>
+        <p>Divisional Round • Live Scores</p>
+      </header>
       <div
         className="ag-theme-alpine"
         style={{ height: '385px', width: '100%' }}
@@ -190,9 +195,10 @@ function App() {
           getRowClass={getRowClass}
           groupHeaderHeight={48}
           headerHeight={0}
+          loading={loading}
         />
       </div>
-      <div>{loading}</div>
+      <ScoringRules/>
     </div>
   );
 }
