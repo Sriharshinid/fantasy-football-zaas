@@ -16,11 +16,11 @@ export class Selection {
 }
 
 export enum Position {
-    QB = 'QB',
-    RB = 'RB',
-    WR = 'WR',
-    TE = 'TE',
-    K = 'K',
-    FLX = 'FLX',
-    DEF = 'DEF_ST'
+    QB = 'Quarterback',
+    RB = 'Running Back',
+    WR = 'Wide Receiver',
+    TE = 'Tight End',
+    K = 'Kicker',
+    FLX = 'Flex (RB | WR | TE)',
+    DEF = 'Defense & Special Teams'
 }

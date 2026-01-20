@@ -4,73 +4,73 @@ import { Position, Selection } from "../interfaces/FantasyPlayer";
 const INPUT: { [x: string]: string; }[] = [
     {
         "Name": "Daniel Zaas",
-        "QB": "C.J. Stroud",
-        "RB": "Christian McCaffrey",
-        "WR": "Puka Nacua",
-        "TE": "Colston Loveland",
-        "K": "Ka'imi Fairbairn",
-        "FLX": "Jaxon Smith-Njigba",
-        "DEF_ST": "Seahawks"
+        "Quarterback": "C.J. Stroud",
+        "Running Back": "Christian McCaffrey",
+        "Wide Receiver": "Puka Nacua",
+        "Tight End": "Colston Loveland",
+        "Kicker": "Ka'imi Fairbairn",
+        "Flex (RB | WR | TE)": "Jaxon Smith-Njigba",
+        "Defense & Special Teams": "Seahawks"
     },
     {
         "Name": "Leah",
-        "QB": "Caleb Williams",
-        "RB": "Christian McCaffrey",
-        "WR": "Jaxon Smith-Njigba",
-        "TE": "Colston Loveland",
-        "K": "Jason Myers",
-        "FLX": "Puka Nacua",
-        "DEF_ST": "Patriots"
+        "Quarterback": "Caleb Williams",
+        "Running Back": "Christian McCaffrey",
+        "Wide Receiver": "Jaxon Smith-Njigba",
+        "Tight End": "Colston Loveland",
+        "Kicker": "Jason Myers",
+        "Flex (RB | WR | TE)": "Puka Nacua",
+        "Defense & Special Teams": "Patriots"
     },
     {
         "Name": "Kevin",
-        "QB": "Brock Purdy",
-        "RB": "James Cook III",
-        "WR": "Jaxon Smith-Njigba",
-        "TE": "Hunter Henry",
-        "K": "Ka'imi Fairbairn",
-        "FLX": "D'Andre Swift",
-        "DEF_ST": "Patriots"
+        "Quarterback": "Brock Purdy",
+        "Running Back": "James Cook III",
+        "Wide Receiver": "Jaxon Smith-Njigba",
+        "Tight End": "Hunter Henry",
+        "Kicker": "Ka'imi Fairbairn",
+        "Flex (RB | WR | TE)": "D'Andre Swift",
+        "Defense & Special Teams": "Patriots"
     },
     {
         "Name": "Joel Zaas",
-        "QB": "Josh Allen",
-        "RB": "Christian McCaffrey",
-        "WR": "Jaxon Smith-Njigba",
-        "TE": "Colston Loveland",
-        "K": "Matt Prater",
-        "FLX": "D'Ernest Johnson",
-        "DEF_ST": "Bears"
+        "Quarterback": "Josh Allen",
+        "Running Back": "Christian McCaffrey",
+        "Wide Receiver": "Jaxon Smith-Njigba",
+        "Tight End": "Colston Loveland",
+        "Kicker": "Matt Prater",
+        "Flex (RB | WR | TE)": "D'Ernest Johnson",
+        "Defense & Special Teams": "Bears"
     },
     {
         "Name": "Chris Gosselin",
-        "QB": "Josh Allen",
-        "RB": "Christian McCaffrey",
-        "WR": "Christian Kirk",
-        "TE": "Dalton Kincaid",
-        "K": "Cairo Santos",
-        "FLX": "Courtland Sutton",
-        "DEF_ST": "Seahawks"
+        "Quarterback": "Josh Allen",
+        "Running Back": "Christian McCaffrey",
+        "Wide Receiver": "Christian Kirk",
+        "Tight End": "Dalton Kincaid",
+        "Kicker": "Cairo Santos",
+        "Flex (RB | WR | TE)": "Courtland Sutton",
+        "Defense & Special Teams": "Seahawks"
     },
     {
         "Name": "Ben",
-        "QB": "Caleb Williams",
-        "RB": "Christian McCaffrey",
-        "WR": "Nico Collins",
-        "TE": "Colston Loveland",
-        "K": "Jason Myers",
-        "FLX": "",
-        "DEF_ST": "Texans"
+        "Quarterback": "Caleb Williams",
+        "Running Back": "Christian McCaffrey",
+        "Wide Receiver": "Nico Collins",
+        "Tight End": "Colston Loveland",
+        "Kicker": "Jason Myers",
+        "Flex (RB | WR | TE)": "",
+        "Defense & Special Teams": "Texans"
     },
     {
         "Name": "Jeremy ",
-        "QB": "Bo Nix",
-        "RB": "Christian McCaffrey",
-        "WR": "Puka Nacua",
-        "TE": "Hunter Henry",
-        "K": "Wil Lutz",
-        "FLX": "Courtland Sutton",
-        "DEF_ST": "Patriots"
+        "Quarterback": "Bo Nix",
+        "Running Back": "Christian McCaffrey",
+        "Wide Receiver": "Puka Nacua",
+        "Tight End": "Hunter Henry",
+        "Kicker": "Wil Lutz",
+        "Flex (RB | WR | TE)": "Courtland Sutton",
+        "Defense & Special Teams": "Patriots"
     }
 ];
 
