@@ -79,9 +79,13 @@ function App() {
     const fetchData = async () => {
       const eventsResult = await fetch(GET_EVENTS_API);
       const eventsUnpacked = await eventsResult.json();
+      console.log('ents, ', eventsUnpacked);
 
       // ["401772982","401772984","401772983","401772985"] <-- last weeks
-      const eventIds = parseEventsData(eventsUnpacked);
+      // const eventIds = parseEventsData(eventsUnpacked);
+      // ["401772986", "401772987"]
+      const eventIds = ["401772982","401772984","401772983","401772985"];
+      console.log('events', eventIds);
       // setEvents(eventIds);
 
       const games = await getGames(eventIds);
@@ -113,13 +117,13 @@ function App() {
     fetchData().catch(error => console.error(error));
   }, []);
 
-  const parseEventsData = (json: any): string[] => {
-    const gameIds: string[] = [];
-    json['sports'][0]['leagues'][0]['events'].forEach((ev: { [x: string]: any; }) => {
-      gameIds.push(ev['id']);
-    });
-    return gameIds;
-  };
+  // const parseEventsData = (json: any): string[] => {
+  //   const gameIds: string[] = [];
+  //   json['sports'][0]['leagues'][0]['events'].forEach((ev: { [x: string]: any; }) => {
+  //     gameIds.push(ev['id']);
+  //   });
+  //   return gameIds;
+  // };
 
   const getGameSummaryUrl = (eventId: string): string => {
     return `https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/summary?region=us&lang=en&contentorigin=espn&event=${eventId}&features=ng`;
