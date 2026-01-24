@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react';
-import { getDefensiveScores, getPlayers, getPlayerScores, getTeams, hasGameStarted } from './utils/scores';
+import { getDefensiveScores, getPlayers, getPlayerScores, getTeams } from './utils/scores';
 import { populateFantasyPlayerScores } from './utils/input';
 import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import { ClientSideRowModelModule, ModuleRegistry, type ColDef, type ColGroupDef } from 'ag-grid-community';
@@ -102,7 +102,7 @@ function App() {
       for (let i = 0; i < rounds.length; i++) {
         let games = await getGames(ROUND_TO_EVENTS[rounds[i]]);
         // filter out any games which haven't started, those players will get 0 points
-        games = games.filter((game) => hasGameStarted(game['header']));
+        // games = games.filter((game) => hasGameStarted(game['header']));
         roundsToGames[rounds[i]] = games;
         let allTeamData = {};
         let allPlayerData = {};

@@ -39,16 +39,16 @@ export const getTeams = (summary: any) => {
 
 export const getPlayers = (summary: any) => {
       const players: { [x: string]: Player; } = {};
-      summary['boxscore']['players'].forEach((pl: { [x: string]: any; }) => {
+      (summary['boxscore']['players'] || []).forEach((pl: { [x: string]: any; }) => {
             // const teamId = pl['team']['id'];
-            pl['statistics'].forEach((stat: { [x: string]: any; }) => {
+            (pl['statistics'] || []).forEach((stat: { [x: string]: any; }) => {
                   switch (stat['name']) {
                         case 'passing':
                               const passingYardsIndex = stat['keys'].findIndex((key: string) => key == 'passingYards');
                               const passingTouchdownsIndex = stat['keys'].findIndex((key: string) => key == 'passingTouchdowns');
                               const interceptionsIndex = stat['keys'].findIndex((key: string) => key == 'interceptions');
 
-                              stat['athletes'].forEach((athlete: { [x: string]: any; }) => {
+                              (stat['athletes'] || []).forEach((athlete: { [x: string]: any; }) => {
                                     const athleteId: string = athlete['athlete']['id'];
 
                                     if (!(athleteId in players)) {
@@ -64,7 +64,7 @@ export const getPlayers = (summary: any) => {
                               const rushingYardsIndex = stat['keys'].findIndex((key: string) => key == 'rushingYards');
                               const rushingTouchdownsIndex = stat['keys'].findIndex((key: string) => key == 'rushingTouchdowns');
 
-                              stat['athletes'].forEach((athlete: { [x: string]: any; }) => {
+                              (stat['athletes'] || []).forEach((athlete: { [x: string]: any; }) => {
                                     const athleteId: string = athlete['athlete']['id'];
 
                                     if (!(athleteId in players)) {
@@ -79,7 +79,7 @@ export const getPlayers = (summary: any) => {
                               const receivingYardsIndex = stat['keys'].findIndex((key: string) => key == 'receivingYards');
                               const receivingTouchdownsIndex = stat['keys'].findIndex((key: string) => key == 'receivingTouchdowns');
 
-                              stat['athletes'].forEach((athlete: { [x: string]: any; }) => {
+                              (stat['athletes'] || []).forEach((athlete: { [x: string]: any; }) => {
                                     const athleteId: string = athlete['athlete']['id'];
 
                                     if (!(athleteId in players)) {
@@ -107,7 +107,7 @@ export const getPlayers = (summary: any) => {
                               const fgIndex = stat['keys'].findIndex((key: string) => key == 'fieldGoalsMade/fieldGoalAttempts');
                               const extraPointsIndex = stat['keys'].findIndex((key: string) => key == 'extraPointsMade/extraPointAttempts');
 
-                              stat['athletes'].forEach((athlete: { [x: string]: any; }) => {
+                              (stat['athletes'] || []).forEach((athlete: { [x: string]: any; }) => {
                                     const athleteId: string = athlete['athlete']['id'];
 
                                     if (!(athleteId in players)) {
@@ -130,7 +130,7 @@ export const getPlayers = (summary: any) => {
             });
       });
 
-      summary['scoringPlays'].forEach((play: { [x: string]: any; }) => {
+      (summary['scoringPlays'] || []).forEach((play: { [x: string]: any; }) => {
             const playId = play['$key'];
             if (playId in summary['entities']['plays']) {
                   const p = summary['entities']['plays'][playId];
@@ -150,7 +150,7 @@ export const getPlayers = (summary: any) => {
 export const getDefensiveStats = (boxscore: any, drives: any, teams: { [x: string]: Team }) => {
       // get defensiveTDs
       // get interceptions
-      boxscore['teams'].forEach((teamScore: { [x: string]: { [x: string]: any; }; }) => {
+      (boxscore['teams'] || []).forEach((teamScore: { [x: string]: { [x: string]: any; }; }) => {
             const teamId = teamScore['team']['id'];
             const team = teams[teamId];
             team.defensiveScores.defensiveTouchdowns = getStatisticForTeam('defensiveTouchdowns', teamScore);
@@ -161,12 +161,12 @@ export const getDefensiveStats = (boxscore: any, drives: any, teams: { [x: strin
       });
 
       // get sacks for team by iterating through players
-      boxscore['players'].forEach((playerInfo: { [x: string]: any; }) => {
+      (boxscore['players'] || []).forEach((playerInfo: { [x: string]: any; }) => {
             const teamId = playerInfo['team']['id'];
             let sacks = 0;
             const defensiveStats = playerInfo['statistics'].find((stat: { [x: string]: any; }) => stat['name'] == 'defensive');
             const sacksIndex = defensiveStats['keys'].findIndex((stat: string) => stat == 'sacks');
-            defensiveStats['athletes'].forEach((athlete: { [x: string]: { [x: string]: any; }; }) => {
+            (defensiveStats['athletes'] || []).forEach((athlete: { [x: string]: { [x: string]: any; }; }) => {
                   sacks += Number(athlete['stats'][sacksIndex]);
             });
 
@@ -176,7 +176,7 @@ export const getDefensiveStats = (boxscore: any, drives: any, teams: { [x: strin
       // to find blocked punts - drives forEach if result === "BLOCKED PUNT" this means the opposing team gets a point for blocked punt in defense
       // blocked kicks - result === "Blocked FG" opposing team gets the points
       // safety - result === "SF" opposite team gets the points
-      drives['previous'].forEach((drive: any) => {
+      (drives?.['previous'] || []).forEach((drive: any) => {
             const opTeamId = teams[drive['team']['$key']].opponentId;
             switch (drive['result']) {
                   case 'BLOCKED PUNT':
@@ -195,7 +195,7 @@ export const getDefensiveStats = (boxscore: any, drives: any, teams: { [x: strin
 }
 
 export const getStatisticForTeam = (statName: string, scores: any): number => {
-      return scores['statistics'].find((stat: { [x: string]: string; }) => stat['name'] == statName)['value'];
+      return scores['statistics'].find((stat: { [x: string]: string; }) => stat['name'] == statName)?.['value'] || 0;
 };
 
 // calculating player scores from raw stats
