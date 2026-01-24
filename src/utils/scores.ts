@@ -256,3 +256,7 @@ export const getDefensiveScores = (teams:  { [x: string]: Team; }): { [x: string
 
       return allTeamScores;
 }
+
+export const hasGameStarted = (header: any): boolean => {
+      return new Date(header['competitions'][0]['date']) < new Date();
+}

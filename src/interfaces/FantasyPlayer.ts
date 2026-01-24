@@ -24,3 +24,10 @@ export enum Position {
     FLX = 'Flex (RB | WR | TE)',
     DEF = 'Defense & Special Teams'
 }
+
+export enum Round {
+    WILDCARD = 'Wildcard',
+    DIVISIONAL = 'Divisional',
+    CONFERENCE = 'Conference',
+    SUPERBOWL = 'Superbowl LX'
+};

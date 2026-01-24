@@ -9,9 +9,12 @@
   text-align: left;
 }
 
-.ag-row-last {
-  font-weight: bold;
+#main-grid {
+  .ag-row-last {
+    font-weight: bold;
+  }
 }
+
 
 .page-header {
   text-align: center;
@@ -26,4 +29,21 @@
 
 .page-header p {
   opacity: 0.7;
+}
+
+.round-label {
+  display: inline-block;   /* allows margin */
+  margin-top: 1rem;   
+}
+
+.grid-wrapper {
+  display: flex;
+  justify-content: center;   /* horizontal centering */
+  width: 100%;
+}
+
+.total-scores {
+  width: 100%;
+  max-width: 1200px;         /* 👈 controls grid width */
+  height: 385px;
 }
