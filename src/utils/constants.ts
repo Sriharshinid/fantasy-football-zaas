@@ -79,7 +79,7 @@ export const DIVISIONAL_INPUT: { [x: string]: string; }[] = [
         "Name": "Jeremy G.",
         "Quarterback": "Bo Nix",
         "Running Back": "Christian McCaffrey",
-        "Wide Receiver": "Puka Nacua",
+        "Wide Receiver": "Puka Nacua (dup. pick)",
         "Tight End": "Hunter Henry",
         "Kicker": "Wil Lutz",
         "Flex (RB | WR | TE)": "Courtland Sutton",

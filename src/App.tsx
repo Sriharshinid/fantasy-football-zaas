@@ -236,8 +236,10 @@ function App() {
         <h1>🏈 Playoff Fantasy Football 2026 🏈</h1>
 
         <label className='round-label'>
-          Round:&nbsp;
+          <b>Round:&nbsp;&nbsp;</b>
+          <span className="dropdown-pill">
           <select
+            className="round-dropdown"
             value={selectedRound}
             onChange={(e) => setSelectedRound(e.target.value as Round)}
           >
@@ -247,6 +249,7 @@ function App() {
               </option>
             ))}
           </select>
+          </span>
         </label>
       </header>
       {(loading || (roundToScores[selectedRound] || []).length > 0) ? (
@@ -270,6 +273,7 @@ function App() {
           <p>Check back after kickoff!</p>
         </div>
       )}
+      <hr className="soft-divider" />
       <h3>Overall Scores</h3>
       <div className='grid-wrapper'>
        <div
