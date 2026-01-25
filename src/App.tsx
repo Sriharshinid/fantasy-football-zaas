@@ -26,7 +26,7 @@ function App() {
   const [columnDefs, setColumnDefs] = useState([] as (ColDef | ColGroupDef)[]);
   const [rowDefs, setRowDefs] = useState([] as any[]);
   const [totalRowDefs, setTotalRowDefs] = useState([] as any[]);
-  const [selectedRound, setSelectedRound] = useState<Round>(Round.CONFERENCE);
+  const [selectedRound, setSelectedRound] = useState<Round>(Round.WILDCARD);
   const [roundToScores, setRoundToScores] = useState<{ [key: string]: FantasyPlayer[] }>({});
 
   const getRowClass = (params: any) => {
@@ -135,7 +135,7 @@ function App() {
 
 
       setRoundToScores(rToScores);
-      setSelectedRound(Round.DIVISIONAL);
+      setSelectedRound(Round.CONFERENCE);
       setTotalRowDefs(getTotalRowDefs(totalScores));
       setLoading(false);
     }

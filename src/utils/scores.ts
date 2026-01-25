@@ -132,7 +132,7 @@ export const getPlayers = (summary: any) => {
 
       (summary['scoringPlays'] || []).forEach((play: { [x: string]: any; }) => {
             const playId = play['$key'];
-            if (playId in summary['entities']['plays']) {
+            if (summary['entities']?.['plays'] && (playId in summary['entities']['plays'])) {
                   const p = summary['entities']['plays'][playId];
                   const athleteId = p['participants'][0]['athlete']['$key'];
                   if (p['type']['abbreviation'] == 'FG' && p['statYardage'] >= 50) {
@@ -164,10 +164,12 @@ export const getDefensiveStats = (boxscore: any, drives: any, teams: { [x: strin
       (boxscore['players'] || []).forEach((playerInfo: { [x: string]: any; }) => {
             const teamId = playerInfo['team']['id'];
             let sacks = 0;
-            const defensiveStats = playerInfo['statistics'].find((stat: { [x: string]: any; }) => stat['name'] == 'defensive');
-            const sacksIndex = defensiveStats['keys'].findIndex((stat: string) => stat == 'sacks');
+            const defensiveStats = (playerInfo?.['statistics'] || []).find((stat: { [x: string]: any; }) => stat['name'] == 'defensive');
+            const sacksIndex = (defensiveStats?.['keys'] || []).findIndex((stat: string) => stat == 'sacks');
             (defensiveStats['athletes'] || []).forEach((athlete: { [x: string]: { [x: string]: any; }; }) => {
-                  sacks += Number(athlete['stats'][sacksIndex]);
+                  if (sacksIndex > -1) {
+                        sacks += Number(athlete['stats'][sacksIndex]);
+                  }  
             });
 
             teams[teamId].defensiveScores.sacks = sacks;

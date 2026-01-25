@@ -160,9 +160,82 @@ const WILD_CARD_INPUT = [
  }
 ];
 
+const CONFERENCE_INPUT = [
+ {
+   "Name": "Daniel Z.",
+   "Quarterback": "Matthew Stafford",
+   "Running Back": "TreVeyon Henderson",
+   "Wide Receiver": "Cooper Kupp",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Wil Lutz",
+   "Flex (RB | WR | TE)": "Davante Adams",
+   "Defense & Special Teams": "Rams"
+ },
+ {
+   "Name": "Leah Z.",
+   "Quarterback": "Sam Darnold",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Kayshon Boutte",
+   "Tight End": "Colby Parkinson",
+   "Kicker": "Harrison Mevis",
+   "Flex (RB | WR | TE)": "Cooper Kupp",
+   "Defense & Special Teams": "Broncos"
+ },
+ {
+   "Name": "Joel Z.",
+   "Quarterback": "Sam Darnold",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Courtland Sutton",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Jason Myers",
+   "Flex (RB | WR | TE)": "Kyren Williams",
+   "Defense & Special Teams": "Seahawks"
+ },
+ {
+   "Name": "Chris G.",
+   "Quarterback": "Matthew Stafford",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Jaxon Smith-Njigba",
+   "Tight End": "Tyler Higbee",
+   "Kicker": "Wil Lutz",
+   "Flex (RB | WR | TE)": "DeMario Douglas",
+   "Defense & Special Teams": "Broncos"
+ },
+ {
+   "Name": "Ben & Sarah K.",
+   "Quarterback": "Matthew Stafford",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Jaxon Smith-Njigba",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Harrison Mevis",
+   "Flex (RB | WR | TE)": "Stefon Diggs",
+   "Defense & Special Teams": "Seahawks"
+ },
+ {
+   "Name": "Kevin G.",
+   "Quarterback": "Sam Darnold",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Davante Adams",
+   "Tight End": "Colby Parkinson",
+   "Kicker": "Jason Myers",
+   "Flex (RB | WR | TE)": "Kyren Williams",
+   "Defense & Special Teams": "Broncos"
+ },
+ {
+   "Name": "Jeremy G.",
+   "Quarterback": "Matthew Stafford",
+   "Running Back": "Rhamandre Stevenson",
+   "Wide Receiver": "Davante Adams",
+   "Tight End": "AJ Barner",
+   "Kicker": "Jason Myers",
+   "Flex (RB | WR | TE)": "Kyren Williams",
+   "Defense & Special Teams": "Broncos"
+ }
+];
+
 export const roundToPicks = {
     [Round.WILDCARD]: WILD_CARD_INPUT,
     [Round.DIVISIONAL]: DIVISIONAL_INPUT,
-    [Round.CONFERENCE]: [],
+    [Round.CONFERENCE]: CONFERENCE_INPUT,
     [Round.SUPERBOWL]: [],
 };
