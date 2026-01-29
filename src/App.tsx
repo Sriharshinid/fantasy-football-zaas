@@ -232,7 +232,7 @@ function App() {
 
   return (
     <div>
-      <header className="page-header">
+      <div className="picks-button">
         <a
           href="https://forms.gle/4TCy3MP664AnfAGL9"
           target="_blank"
@@ -240,7 +240,8 @@ function App() {
           className="header-button"
         >
           Choose your picks here!
-        </a>
+        </a></div>
+      <header className="page-header">
         <h1>🏈 Playoff Fantasy Football 2026 🏈</h1>
 
         <label className='round-label'>
