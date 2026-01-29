@@ -59,7 +59,7 @@ function App() {
   const getTotalRowDefs = (totalScores: { [key: string]: number }): any[] => {
     const rows: any[] = [];
     Object.keys(totalScores).forEach(player => {
-      rows.push({name: player, score: totalScores[player]})
+      rows.push({ name: player, score: totalScores[player] })
     });
     rows.sort((a, b) => b.score - a.score);
     return rows;
@@ -233,22 +233,30 @@ function App() {
   return (
     <div>
       <header className="page-header">
+        <a
+          href="https://forms.gle/4TCy3MP664AnfAGL9"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="header-button"
+        >
+          Choose your picks here!
+        </a>
         <h1>🏈 Playoff Fantasy Football 2026 🏈</h1>
 
         <label className='round-label'>
           <b>Round:&nbsp;&nbsp;</b>
           <span className="dropdown-pill">
-          <select
-            className="round-dropdown"
-            value={selectedRound}
-            onChange={(e) => setSelectedRound(e.target.value as Round)}
-          >
-            {Object.values(Round).map((round) => (
-              <option key={round} value={round}>
-                {round}
-              </option>
-            ))}
-          </select>
+            <select
+              className="round-dropdown"
+              value={selectedRound}
+              onChange={(e) => setSelectedRound(e.target.value as Round)}
+            >
+              {Object.values(Round).map((round) => (
+                <option key={round} value={round}>
+                  {round}
+                </option>
+              ))}
+            </select>
           </span>
         </label>
       </header>
@@ -276,23 +284,23 @@ function App() {
       <hr className="soft-divider" />
       <h3>Overall Scores</h3>
       <div className='grid-wrapper'>
-       <div
+        <div
           className="ag-theme-alpine total-scores"
           style={{ height: '345px', width: '336px' }}
         >
-      <AgGridReact
-        theme={themeQuartz}
-        rowData={totalRowDefs}
-        columnDefs={[{
-          headerName: "Name",
-          field: 'name',
-          pinned: 'left'
-        }, {
-          headerName: "Total Score",
-          field: 'score'
-        }]}
-        loading={loading}
-      /></div>
+          <AgGridReact
+            theme={themeQuartz}
+            rowData={totalRowDefs}
+            columnDefs={[{
+              headerName: "Name",
+              field: 'name',
+              pinned: 'left'
+            }, {
+              headerName: "Total Score",
+              field: 'score'
+            }]}
+            loading={loading}
+          /></div>
       </div>
       <ScoringRules />
     </div>
