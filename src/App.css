@@ -122,14 +122,17 @@
   font-weight: 600;
 
   border-radius: 999px;
-  background-color: #2563eb;
-  color: white;
+  border-color: #A5acaf;
+  border-width: 5px;
+  background-color: #69BE28;
+  color: #003087;
   text-decoration: none;
 
   transition: background-color 0.15s ease;
 }
 
 .header-button:hover {
-  background-color: #1d4ed8;
+  background-color: #003087;
+  color: #A5acaf;
 }
 
