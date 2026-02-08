@@ -135,7 +135,7 @@ function App() {
 
 
       setRoundToScores(rToScores);
-      setSelectedRound(Round.CONFERENCE);
+      setSelectedRound(Round.SUPERBOWL);
       setTotalRowDefs(getTotalRowDefs(totalScores));
       setLoading(false);
     }

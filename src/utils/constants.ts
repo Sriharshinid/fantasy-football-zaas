@@ -233,9 +233,82 @@ const CONFERENCE_INPUT = [
  }
 ];
 
+const SUPERBOWL_INPUTS = [
+ {
+   "Name": "Joel Z.",
+   "Quarterback": "Drake Maye",
+   "Running Back": "Rhamondre Stevenson",
+   "Wide Receiver": "Cooper Kupp",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Jason Myers",
+   "Flex (RB | WR | TE)": "Mack Hollins",
+   "Defense & Special Teams": "Patriots"
+ },
+ {
+   "Name": "Chris G.",
+   "Quarterback": "Drake Maye",
+   "Running Back": "TreVeyon Henderson",
+   "Wide Receiver": "Kayshon Boutte",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Andy Borregales",
+   "Flex (RB | WR | TE)": "Stefon Diggs",
+   "Defense & Special Teams": "Patriots"
+ },
+ {
+   "Name": "Daniel Z.",
+   "Quarterback": "Sam Darnold",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Stefon Diggs",
+   "Tight End": "AJ Barner",
+   "Kicker": "Jason Myers",
+   "Flex (RB | WR | TE)": "Rhamondre Stevenson",
+   "Defense & Special Teams": "Patriots"
+ },
+ {
+   "Name": "Leah Z.",
+   "Quarterback": "Drake Maye",
+   "Running Back": "TreVeyon Henderson",
+   "Wide Receiver": "Stefon Diggs",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Andy Borregales",
+   "Flex (RB | WR | TE)": "AJ Barner",
+   "Defense & Special Teams": "Seahawks"
+ },
+ {
+   "Name": "Kevin G.",
+   "Quarterback": "Drake Maye",
+   "Running Back": "Rhamondre Stevenson",
+   "Wide Receiver": "Stefon Diggs",
+   "Tight End": "AJ Barner",
+   "Kicker": "Andy Borregales",
+   "Flex (RB | WR | TE)": "Cooper Kupp",
+   "Defense & Special Teams": "Seahawks"
+ },
+ {
+   "Name": "Ben & Sarah K.",
+   "Quarterback": "Drake Maye",
+   "Running Back": "Rhamondre Stevenson",
+   "Wide Receiver": "Cooper Kupp",
+   "Tight End": "Hunter Henry",
+   "Kicker": "Andy Borregales",
+   "Flex (RB | WR | TE)": "TreVeyon Henderson",
+   "Defense & Special Teams": "Patriots"
+ },
+ {
+   "Name": "Jeremy G.",
+   "Quarterback": "Sam Darnold",
+   "Running Back": "Kenneth Walker III",
+   "Wide Receiver": "Jaxon Smith Njigba",
+   "Tight End": "Austin Hooper",
+   "Kicker": "Andy Borregales",
+   "Flex (RB | WR | TE)": "Kayshon Boutte",
+   "Defense & Special Teams": "Seahawks"
+ }
+];
+
 export const roundToPicks = {
     [Round.WILDCARD]: WILD_CARD_INPUT,
     [Round.DIVISIONAL]: DIVISIONAL_INPUT,
     [Round.CONFERENCE]: CONFERENCE_INPUT,
-    [Round.SUPERBOWL]: [],
+    [Round.SUPERBOWL]: SUPERBOWL_INPUTS,
 };
