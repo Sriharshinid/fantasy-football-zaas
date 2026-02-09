@@ -214,14 +214,14 @@ export const getPlayerScores = (players:  { [x: string]: Player; }, playerIdToNa
             score += players[playerId].rushingYards < 0 ? 0 : Math.floor(players[playerId].rushingYards/25)
             score += players[playerId].receivingYards < 0 ? 0 : Math.floor(players[playerId].receivingYards/25)
 
-            score += players[playerId].rushingYards > 100 ? 5 : 0;
-            score += players[playerId].rushingYards > 200 ? 5 : 0;
-            score += players[playerId].receivingYards > 100 ? 5 : 0;
-            score += players[playerId].receivingYards > 200 ? 5 : 0;
+            score += players[playerId].rushingYards >= 100 ? 5 : 0;
+            score += players[playerId].rushingYards >= 200 ? 5 : 0;
+            score += players[playerId].receivingYards >= 100 ? 5 : 0;
+            score += players[playerId].receivingYards >= 200 ? 5 : 0;
 
             score += Math.floor(players[playerId].passingYards/50);
-            score += players[playerId].passingYards > 300 ? 3 : 0;
-            score += players[playerId].passingYards > 400 ? 3 : 0;
+            score += players[playerId].passingYards >= 300 ? 3 : 0;
+            score += players[playerId].passingYards >= 400 ? 3 : 0;
 
             score -= players[playerId].interceptions;
             score -= players[playerId].fumblesLost;
