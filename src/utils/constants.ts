@@ -11,7 +11,7 @@ export const ROUND_TO_EVENTS: { [x: string]: string[]; } = {
     [Round.WILDCARD]: ["401772979", "401772981", "401772977", "401772980", "401772978", "401772976"],
     [Round.DIVISIONAL]: ["401772982","401772984","401772983","401772985"],
     [Round.CONFERENCE]: ["401772986", "401772987"],
-    [Round.SUPERBOWL]: ["401831718"]
+    [Round.SUPERBOWL]: ["401772988"]
 };
 
 export const DIVISIONAL_INPUT: { [x: string]: string; }[] = [
