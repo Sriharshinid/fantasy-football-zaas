@@ -298,7 +298,7 @@ const SUPERBOWL_INPUTS = [
    "Name": "Jeremy G.",
    "Quarterback": "Sam Darnold",
    "Running Back": "Kenneth Walker III",
-   "Wide Receiver": "Jaxon Smith Njigba",
+   "Wide Receiver": "Jaxon Smith-Njigba",
    "Tight End": "Austin Hooper",
    "Kicker": "Andy Borregales",
    "Flex (RB | WR | TE)": "Kayshon Boutte",
